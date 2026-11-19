@@ -173,7 +173,7 @@ export default function Shop() {
 
         <div className="relative mx-auto max-w-[1440px] px-10">
           {/* Title + Results count */}
-          <div className="flex items-end justify-between">
+        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <h1 className="text-[40px] font-extrabold leading-none text-[#202020]">
                 Shop
@@ -205,7 +205,7 @@ export default function Shop() {
           <DecorativeBubbles />
         </div>
 
-        <div className="relative mx-auto flex max-w-[1440px] items-start gap-7 px-10">
+        <div className="relative mx-auto flex max-w-[1440px] flex-col items-stretch gap-7 px-5 sm:px-8 lg:flex-row lg:items-start lg:px-10">
           {/* ---------------- SIDEBAR: FILTERS ---------------- */}
          <FilterSidebar
   search={search}
@@ -219,8 +219,8 @@ export default function Shop() {
           {/* ---------------- END SIDEBAR ---------------- */}
 
           {/* ---------------- SERVICE CARDS GRID ---------------- */}
-          <div className="flex-1 self-start">
-            <div className="grid grid-cols-4 gap-x-[18px] gap-y-[28px]">
+          <div className="w-full min-w-0 flex-1 self-start">
+            <div className="grid grid-cols-1 gap-x-[18px] gap-y-[28px] sm:grid-cols-2 xl:grid-cols-4">
               {filteredServices.map((service) => (
                 <div
                   key={service.id}

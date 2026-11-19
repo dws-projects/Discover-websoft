@@ -1,13 +1,8 @@
 import axios from "axios";
-
-// Set VITE_API_URL in a .env file at the project root (same level as
-// package.json) once the server is running, e.g.:
-//   VITE_API_URL=http://localhost:5000/api
-// Falls back to localhost:5000 for local development if not set.
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+import { API_BASE_URL } from "./config";
 
 const apiClient = axios.create({
-  baseURL: API_URL,
+  baseURL: API_BASE_URL,
 });
 
 // Attaches the logged-in customer's token to every request automatically,

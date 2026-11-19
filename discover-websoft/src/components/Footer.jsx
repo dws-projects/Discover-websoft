@@ -31,7 +31,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#23232D] text-white">
      <div className="mx-auto max-w-[1280px] px-5 pt-14 pb-8">
-        <div className="grid grid-cols-[240px_1fr] gap-24">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-[180px_1fr] sm:gap-10 lg:grid-cols-[240px_1fr] lg:gap-24">
           {/* Logo column */}
           <div>
             <img
@@ -81,8 +81,11 @@ text-white/55"
           <div
             className="
               grid
-              grid-cols-3
-             gap-12
+              grid-cols-1
+              gap-8
+              sm:grid-cols-2
+              lg:grid-cols-3
+              lg:gap-12
             "
           >
             <div>

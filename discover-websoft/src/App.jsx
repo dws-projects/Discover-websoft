@@ -2,6 +2,9 @@ import { useLayoutEffect } from "react";
 import { Routes, Route, useLocation, useParams } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Shop from "./pages/Shop";
 import ServicePage from "./pages/ServicePage";
@@ -60,7 +63,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<h1>About</h1>} />
+        <Route path="/about" element={<About />} />
         <Route path="/shop" element={<Shop />} />
 
         <Route path="/shop/:serviceSlug" element={<ServicePage />}/>
@@ -95,8 +98,8 @@ function App() {
           }
         />
 
-        <Route path="/blog" element={<h1>Blog</h1>} />
-        <Route path="/contact" element={<h1>Contact Us</h1>} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </>

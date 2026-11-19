@@ -106,8 +106,8 @@ used on an admin route or vice versa.
 
 ## Not built yet (flagged, not forgotten)
 
-- Mail integration (quote confirmation emails, T&C attachment) -- no
-  mail service is wired in yet
+- Quote confirmation and admin notification emails use the SMTP settings in
+  `.env` (`EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_USER`, and `EMAIL_PASSWORD`).
 - Rate limiting / brute-force protection on login routes
 - Input validation is minimal (checks required fields exist, not full
   schema validation) -- fine for now, worth hardening before production

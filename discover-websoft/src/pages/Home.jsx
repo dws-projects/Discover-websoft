@@ -198,13 +198,13 @@ function HeroSection() {
       className="relative overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
-      <div className="mx-auto max-w-[1320px] px-6 sm:px-10 lg:px-16">
-        <div className="flex min-h-[calc(100vh-88px)] items-center justify-between gap-10">
+      <div className="mx-auto max-w-[1440px] px-6 py-12 sm:px-10 lg:px-16 lg:py-0">
+        <div className="flex min-h-[calc(100vh-88px)] flex-col items-center justify-center gap-8 lg:flex-row lg:justify-between lg:gap-10">
 
           {/* ── Left Content ── */}
-          <div className="w-[40%] shrink-0">
+          <div className="w-full max-w-[560px] shrink-0 lg:w-[40%]">
 
-            <h1 className="text-[64px] font-extrabold leading-[72px] text-[#1B1B1B]">
+            <h1 className="text-[clamp(3rem,4.2vw,4.5rem)] font-extrabold leading-[1.05] tracking-[-.035em] text-[#1B1B1B]">
               Web & App
               <br />
               Design
@@ -225,7 +225,7 @@ function HeroSection() {
           </div>
 
           {/* ── Right Image ── */}
-          <div className="w-[60%] shrink-0">
+          <div className="w-full max-w-[560px] shrink-0 lg:w-[52%]">
             <img
               src={heroImg}
               alt="Web & App Design Showcase"

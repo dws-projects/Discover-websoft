@@ -20,3 +20,52 @@ img {
   display: block;
   max-width: 100%;
 }
+
+/* Use the requested black treatment for neutral gray copy site-wide while
+   leaving branded gold, green, and validation colors intact. */
+[class*="text-[#444"],
+[class*="text-[#5b5b5b"],
+[class*="text-[#5B5B5B"],
+[class*="text-[#5F5F5F"],
+[class*="text-[#666"],
+[class*="text-[#676767"],
+[class*="text-[#888"],
+[class*="text-[#8B8B8B"],
+[class*="text-[#999"],
+[class*="text-[#A9A099"] {
+  color: #000 !important;
+}
+
+/* Keep wide desktop layouts centered while preventing fixed-width components
+   from overflowing small laptop, tablet, and phone viewports. */
+@media (max-width: 767px) {
+  [class*="w-["],
+  [class*="min-w-["] {
+    max-width: min(100%, calc(100vw - 2rem));
+  }
+
+  [class*="min-w-["] {
+    min-width: 0 !important;
+  }
+
+  [class*="-ml-["] {
+    margin-left: 0 !important;
+  }
+
+  [class*="grid-cols-4"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  main,
+  section,
+  article,
+  form {
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1600px) {
+  #root {
+    width: 100%;
+  }
+}

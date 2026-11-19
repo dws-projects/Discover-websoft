@@ -94,11 +94,11 @@ const handleAddToCart = () => {
       <div className="pointer-events-none absolute left-[220px] top-[10px] h-2.5 w-2.5 rounded-full bg-[#F5B041] opacity-60" />
       <div className="pointer-events-none absolute right-[120px] bottom-[60px] h-4 w-4 rounded-full bg-gradient-to-br from-white via-[#FFE6AE] to-[#F5B041] opacity-40" />
 
-      <div className="relative z-10 mx-auto flex max-w-[1440px] items-start gap-[60px] px-[32px]">
+      <div className="relative z-10 mx-auto flex max-w-[1440px] flex-col items-stretch gap-8 px-5 sm:px-8 lg:flex-row lg:items-start lg:gap-[60px] lg:px-[32px]">
         {/* =======================================================
               LEFT IMAGE — full-bleed, no white card/padding
         ======================================================= */}
-        <div className="w-[49%] shrink-0">
+        <div className="w-full shrink-0 lg:w-[49%]">
           <div
             className="
               group
@@ -113,7 +113,7 @@ const handleAddToCart = () => {
               alt={plan.name}
               draggable="false"
               className="
-                h-[690px]
+                h-auto aspect-[1.08/1] lg:h-[690px] lg:aspect-auto
                 w-full
                 object-cover
                 transition-all

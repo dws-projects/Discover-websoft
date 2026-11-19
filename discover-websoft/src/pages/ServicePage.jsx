@@ -116,9 +116,9 @@ font-extrabold
       =========================================================== */}
      <section className="relative -mt-[6px] bg-[#FDF6E8] pb-[110px]">
         <div className="mx-auto max-w-[1440px] px-10">
-         <div className="flex items-start gap-[26px]">
+         <div className="flex flex-col items-stretch gap-6 lg:flex-row lg:items-start lg:gap-[26px]">
             {/* ---------------- SIDEBAR ---------------- */}
-            <div className="w-[305px] shrink-0 self-start pt-10">
+            <div className="w-full shrink-0 self-start pt-6 lg:w-[305px] lg:pt-10">
               <FilterSidebar
                 search={search}
                 setSearch={setSearch}
@@ -132,7 +132,7 @@ font-extrabold
             {/* ---------------- END SIDEBAR ---------------- */}
 
             {/* ---------------- PLAN / SUB SERVICE GRID ---------------- */}
-<div className="flex-1 self-start pt-10">
+<div className="w-full min-w-0 flex-1 self-start pt-4 lg:pt-10">
 
   <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
 

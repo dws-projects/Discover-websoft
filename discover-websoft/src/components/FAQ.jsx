@@ -16,7 +16,7 @@ export default function FAQ({
           FAQ SECTION
       =========================================================== */}
       <section
-  className="relative overflow-hidden bg-[#FDF6E8] pt-[175px] pb-[110px]"
+  className="relative overflow-hidden bg-[#FDF6E8] py-16 sm:py-24"
         style={{
           backgroundImage: `url(${bubbleBg})`,
           backgroundRepeat: "no-repeat",
@@ -42,7 +42,7 @@ export default function FAQ({
               "
             />
             <div className="relative z-10">
-              <h2 className="text-[52px] font-extrabold leading-none text-[#202020]">
+              <h2 className="text-[clamp(2rem,4.2vw,3.25rem)] font-extrabold leading-tight text-[#202020]">
                 Frequently{" "}
                 <span className="text-[#F5A623]">Asked Questions</span>
               </h2>
@@ -53,17 +53,17 @@ export default function FAQ({
             </div>
           </div>
 
-      <div className="mt-[52px] flex items-start gap-[100px]">
-         <div className="-ml-[175px] mt-[6px] flex w-[395px] shrink-0 items-end">
+      <div className="mt-10 flex flex-col items-center gap-8 lg:mt-[52px] lg:flex-row lg:items-start lg:gap-[64px] xl:gap-[100px]">
+         <div className="mt-[6px] flex w-full max-w-[395px] items-end justify-center lg:-ml-[80px] lg:shrink-0">
               <img
                 src={girlImg}
                 alt="FAQ Girl"
                 draggable="false"
-                className="w-[355px] max-w-none object-contain select-none"
+                className="w-full max-w-[355px] object-contain select-none"
               />
             </div>
 
-           <div className="mt-[28px] w-[870px]">
+           <div className="mt-0 w-full max-w-[870px] lg:mt-[28px]">
               <div className="space-y-6">
                 {faqData.map((faq, index) => {
                   const isOpen = openIndex === index;
@@ -102,7 +102,7 @@ export default function FAQ({
                             items-center
                             justify-between
                            px-[28px] py-[24px] text-left">
-                          <span className="text-[18px] leading-[26px] font-medium font-medium text-[#202020]">
+                          <span className="text-left text-[clamp(14px,1.25vw,18px)] leading-[1.45] font-medium text-[#202020]">
                             {faq.question}
                           </span>
                           <img
@@ -119,8 +119,7 @@ export default function FAQ({
                           }`}
                         >
                          <div className="border-t border-[#F2D08E] px-[28px] py-[22px]">
-                            <p className="text-[15px] leading-[28px]
-text-[#5B5B5B]">
+                            <p className="text-[15px] leading-[1.55] text-black">
                               {faq.answer}
                             </p>
                           </div>

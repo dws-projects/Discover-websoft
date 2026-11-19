@@ -18,7 +18,7 @@ export default function QuotationSection({
 
         <div className="text-center">
 
-          <h2 className="text-[58px] font-extrabold leading-none">
+          <h2 className="text-[clamp(2rem,4.2vw,3.625rem)] font-extrabold leading-tight">
 
             <span className="text-[#202020]">
               Get Customised
@@ -30,7 +30,7 @@ export default function QuotationSection({
 
           </h2>
 
-          <p className="mt-4 text-[17px] text-[#202020]">
+          <p className="mt-4 text-[clamp(14px,1.2vw,17px)] text-black">
 
             Receive a personalized cost estimate based on your project requirements.
 
@@ -40,7 +40,7 @@ export default function QuotationSection({
 
         {/* Layout */}
 
-        <div className="mt-16 flex items-start gap-10">
+        <div className="mt-10 flex flex-col items-stretch gap-8 lg:mt-16 lg:flex-row lg:items-start lg:gap-10">
 
           {/* Left */}
 
@@ -52,7 +52,7 @@ export default function QuotationSection({
 
           {/* Right */}
 
-          <div className="w-[360px] shrink-0">
+          <div className="w-full shrink-0 lg:w-[360px]">
 
             {summary}
 

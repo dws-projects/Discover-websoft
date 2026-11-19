@@ -15,9 +15,9 @@ export default function FilterSidebar({
   return (
     <div
                 className="
-                  sticky
+                  static
                   top-[110px]
-                  w-[305px]
+                  w-full
                   shrink-0
                   self-start
                   overflow-hidden
@@ -29,6 +29,8 @@ export default function FilterSidebar({
                   to-[#FFD78F]
                   p-5
                   shadow-[0_10px_22px_rgba(0,0,0,.08)]
+                  lg:sticky
+                  lg:w-[305px]
                 "
               >
                 {/* Filters heading */}
