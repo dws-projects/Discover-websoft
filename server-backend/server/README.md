@@ -106,8 +106,9 @@ used on an admin route or vice versa.
 
 ## Not built yet (flagged, not forgotten)
 
-- Quote confirmation and admin notification emails use the SMTP settings in
-  `.env` (`EMAIL_HOST`, `EMAIL_PORT`, `EMAIL_USER`, and `EMAIL_PASSWORD`).
+- Quote confirmation and admin notification emails use the Resend HTTP API.
+  Set `RESEND_API_KEY` in the backend environment. For real recipients, verify
+  a sending domain with Resend and set `EMAIL_FROM` to an address on that domain.
 - Rate limiting / brute-force protection on login routes
 - Input validation is minimal (checks required fields exist, not full
   schema validation) -- fine for now, worth hardening before production

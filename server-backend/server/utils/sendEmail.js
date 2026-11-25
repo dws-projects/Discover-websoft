@@ -1,51 +1,47 @@
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
-let transporter;
+let resendClient;
 
-function getTransporter() {
-  if (transporter) return transporter;
-
-  const host = process.env.EMAIL_HOST;
-  const port = Number(process.env.EMAIL_PORT || 465);
-  const user = process.env.EMAIL_USER;
-  const pass = process.env.EMAIL_PASSWORD || process.env.EMAIL_APP_PASSWORD;
-
-  if (!host || !user || !pass) {
-    console.warn(
-      "Email not sent -- EMAIL_HOST, EMAIL_USER, and EMAIL_PASSWORD are required"
-    );
+function getResendClient() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.warn("Email not sent -- RESEND_API_KEY is missing");
     return null;
   }
 
-  transporter = nodemailer.createTransport({
-    host,
-    port,
-    secure: process.env.EMAIL_SECURE
-      ? process.env.EMAIL_SECURE === "true"
-      : port === 465,
-    auth: { user, pass },
-  });
+  if (!resendClient) {
+    resendClient = new Resend(apiKey);
+  }
 
-  return transporter;
+  return resendClient;
 }
 
 async function sendEmail({ to, subject, html, attachments }) {
-  const mailer = getTransporter();
-  if (!mailer) return false;
+  const resend = getResendClient();
+  if (!resend) return false;
 
   try {
-    const info = await mailer.sendMail({
-      from: process.env.EMAIL_FROM || process.env.EMAIL_USER,
+    const email = {
+      from: process.env.EMAIL_FROM || "onboarding@resend.dev",
       to,
       subject,
       html,
-      attachments: attachments?.map((attachment) => ({
+    };
+
+    if (attachments?.length) {
+      email.attachments = attachments.map((attachment) => ({
         filename: attachment.filename,
         content: attachment.content,
-      })),
-    });
+      }));
+    }
 
-    console.log(`Email sent to ${to} (messageId: ${info.messageId})`);
+    const { data, error } = await resend.emails.send(email);
+    if (error) {
+      console.error("Resend email error:", error);
+      return false;
+    }
+
+    console.log(`Email sent to ${to} (messageId: ${data?.id || "unknown"})`);
     return true;
   } catch (err) {
     console.error(`Failed to send email to ${to}:`, err.message);
